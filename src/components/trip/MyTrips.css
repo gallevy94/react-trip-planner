@@ -1,0 +1,42 @@
+.mytrips_container {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  gap: 25px;
+  padding: 20px 0;
+  
+}
+
+.mytrip_container {
+  cursor: pointer;
+  border-radius: 10px;
+  border: solid 1px #ddd;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden; 
+  transition: transform 0.2s;
+}
+
+.mytrip_container:hover {
+  opacity: 0.8;
+  transform: translateY(-0.1rem);
+}
+
+.mytrip_container h2 {
+  font-size: 1.5em;
+  margin: 10px;
+  color: #333;
+}
+
+.mytrips_date {
+  font-size: 0.8em;
+  color: #555; /* Slightly lighter color for the dates */
+  margin: 10px; /* Space between city name and dates */
+  font-style: italic; /* Italic style for dates */
+}
+
+.mytrip_container img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+}

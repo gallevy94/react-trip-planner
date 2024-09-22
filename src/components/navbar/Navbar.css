@@ -1,0 +1,43 @@
+.nav_container {
+  height: 50px;
+  background: #fffff2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0.1rem 0.6rem #fdbd88;
+}
+
+.nav_logo {
+  width: 2rem;
+  border-radius: 50%;
+  margin: 10px 10px 10px 20px;
+  align-items: center;
+}
+
+.nav_menu {
+  display: flex;
+  gap: 1rem;
+  margin-right: 50px;
+}
+
+.maps_menu {
+  display: flex;
+  gap: 1rem;
+  margin-right: 1000px;
+}
+
+.nav_button {
+  padding: 8px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #1ea9c6;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background: #ffde87;
+  transform: translateY(-0.1rem);
+}

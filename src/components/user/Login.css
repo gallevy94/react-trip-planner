@@ -1,0 +1,74 @@
+.login_container {
+  background-image: url(../../assets/beach.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login_form {
+  display: flex;
+  background-color: #fdbd88;
+  padding: 40px 80px 80px 80px;
+  border-radius: 30px;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.google-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: #1ea9c6;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px;
+  cursor: pointer;
+  width: 160px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.google-button:hover {
+  transform: translateY(-0.1rem);
+  background-color: #f9f9cb;
+}
+
+.google-logo {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.error_p {
+  color: red;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.divider-wrapper {
+  display: flex;
+  text-transform: uppercase;
+  font-size: 12px;
+  align-items: center;
+}
+
+.divider-wrapper:before,
+.divider-wrapper:after {
+  content: "";
+  border-bottom: 1px solid #1ea9c6;
+  flex: 1 0 auto;
+  height: 0.5em;
+}
+
+.divider {
+  text-align: center;
+  flex: 0.2 0 auto;
+  margin: 0;
+  height: 12px;
+}

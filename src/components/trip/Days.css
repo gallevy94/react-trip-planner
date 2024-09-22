@@ -1,0 +1,41 @@
+.day_slider {
+  width: 280px;
+  height: 250px;
+  position: absolute;
+  top: 180px;
+  z-index: 1;
+  background-color: white;
+  margin: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+}
+
+.day_slider:hover {
+  opacity: 0.9;
+}
+
+.date_container {
+  display: flex;
+  flex-direction: row;
+  background-color: #ffde87;
+  gap: 10px;
+  justify-content: center; 
+  align-items: center; 
+  padding: 5px;
+  border: 1px solid #fdbd88;
+}
+
+.date_logo {
+  width: 30px;
+  height: 30px;
+  margin: 0;
+}
+
+.data_summary{
+  color: #2a1f2d;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin: 35px;
+}

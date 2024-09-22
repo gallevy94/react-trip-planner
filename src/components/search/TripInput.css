@@ -1,0 +1,50 @@
+/* "black" color- #2b1725 */
+
+.main_input_container {
+  /* background-image: url(./assets/beach.jpg);  */
+    position: absolute;
+    left: 470px;
+    top: 100px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+} 
+
+.user_input {
+  /* background-color: #fdbd88; */
+  background-color: white;
+  background-position: center;
+  padding: 7px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input_form {
+  display: flex;
+  /* flex-direction: row; */
+  gap: 20px;
+}
+
+.input {
+  width: 120px;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #fdbd88;
+}
+
+.button {
+  padding: 9px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  background-color: #1ea9c6;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #ffde87;
+  transform: translateY(-0.1rem);
+}
