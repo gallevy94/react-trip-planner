@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Create an Axios instance
 const api = axios.create({
-  baseURL: "http://3.137.174.81:8080/",
+  baseURL: "http://3.141.42.122:8080/",
 });
 
 // Add a request interceptor to include JWT token in headers

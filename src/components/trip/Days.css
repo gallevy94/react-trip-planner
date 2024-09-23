@@ -9,7 +9,7 @@
   border-radius: 10px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  cursor: pointer;
+  cursor: move;
 }
 
 .day_slider:hover {
@@ -21,8 +21,8 @@
   flex-direction: row;
   background-color: #ffde87;
   gap: 10px;
-  justify-content: center; 
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
   padding: 5px;
   border: 1px solid #fdbd88;
 }
@@ -33,7 +33,7 @@
   margin: 0;
 }
 
-.data_summary{
+.data_summary {
   color: #2a1f2d;
   font-weight: bold;
   font-size: 0.9rem;

@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Days.css";
-
+import Draggable from "react-draggable";
 import DateLogo from "../../assets/date.png";
 
 const settings = {
@@ -16,19 +16,21 @@ const settings = {
 
 const Days = ({ tripPlan, onItemClick }) => {
   return (
-    <div className="day_slider">
-      <Slider {...settings}>
-        {tripPlan.map((dayPlan, index) => (
-          <div key={index} onClick={() => onItemClick(dayPlan.id)}>
-            <div className="date_container">
-              <img className="date_logo" src={DateLogo} alt="date_Logo" />
-              <h3>{dayPlan.date}</h3>
+    <Draggable>
+      <div className="day_slider">
+        <Slider {...settings}>
+          {tripPlan.map((dayPlan, index) => (
+            <div key={index} onClick={() => onItemClick(dayPlan.id)}>
+              <div className="date_container">
+                <img className="date_logo" src={DateLogo} alt="date_Logo" />
+                <h3>{dayPlan.date}</h3>
+              </div>
+              <p className="data_summary">{dayPlan.summary}</p>
             </div>
-            <p className="data_summary">{dayPlan.summary}</p>
-          </div>
-        ))}
-      </Slider>
-    </div>
+          ))}
+        </Slider>
+      </div>
+    </Draggable>
   );
 };
 

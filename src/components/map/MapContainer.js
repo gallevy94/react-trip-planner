@@ -11,6 +11,7 @@ import Activity from "../trip/Activity";
 import NormalPinIcon from "../../assets/normal_pin.png";
 import SelectedPinIcon from "../../assets/selected_pin.png";
 import Slider from "react-slick";
+import Draggable from "react-draggable";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -136,23 +137,25 @@ const MapContainer = ({ tripPlan, coordinates, imagesUrls }) => {
       {tripPlan && <Days tripPlan={tripPlan} onItemClick={onDayPress} />}
 
       {dayIdClick !== null && tripPlan[dayIdClick] && (
-        <div className="activity_slider">
-          <Slider {...settings}>
-            {tripPlan[dayIdClick].activities.map((activity) => (
-              <div key={activity.id}>
-                <Activity
-                  id={activity.id}
-                  imageUrl={imagesUrls[activity.id + 1]}
-                  place={activity.place}
-                  time={activity.time}
-                  address={activity.address}
-                  description={activity.description}
-                  onCardPress={onActivityPress}
-                />
-              </div>
-            ))}
-          </Slider>
-        </div>
+        <Draggable>
+          <div className="activity_slider">
+            <Slider {...settings}>
+              {tripPlan[dayIdClick].activities.map((activity) => (
+                <div key={activity.id}>
+                  <Activity
+                    id={activity.id}
+                    imageUrl={imagesUrls[activity.id + 1]}
+                    place={activity.place}
+                    time={activity.time}
+                    address={activity.address}
+                    description={activity.description}
+                    onCardPress={onActivityPress}
+                  />
+                </div>
+              ))}
+            </Slider>
+          </div>
+        </Draggable>
       )}
     </div>
   );

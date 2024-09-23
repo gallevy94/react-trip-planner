@@ -26,7 +26,7 @@ function App() {
   const [isSignup, setIsSignup] = useState(false);
 
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyAASPD-LcNHdzx6pcU3taWxY-i-AwRiEWo",
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY,
     libraries,
   });
 
