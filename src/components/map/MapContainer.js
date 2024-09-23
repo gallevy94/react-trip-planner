@@ -40,6 +40,7 @@ const MapContainer = ({ tripPlan, coordinates, imagesUrls }) => {
   const [cardIdClick, setCardIdClick] = useState(null);
   const [dayIdClick, setDayIdClick] = useState(null);
 
+  const nodeRef = useRef(null);
   const mapRef = useRef(null);
   const map = mapRef.current;
 
@@ -137,8 +138,8 @@ const MapContainer = ({ tripPlan, coordinates, imagesUrls }) => {
       {tripPlan && <Days tripPlan={tripPlan} onItemClick={onDayPress} />}
 
       {dayIdClick !== null && tripPlan[dayIdClick] && (
-        <Draggable>
-          <div className="activity_slider">
+        <Draggable nodeRef={nodeRef}>
+          <div className="activity_slider" ref={nodeRef}>
             <Slider {...settings}>
               {tripPlan[dayIdClick].activities.map((activity) => (
                 <div key={activity.id}>

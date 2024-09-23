@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useRef} from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -15,9 +15,12 @@ const settings = {
 };
 
 const Days = ({ tripPlan, onItemClick }) => {
+
+  const nodeRef = useRef(null);
+
   return (
-    <Draggable>
-      <div className="day_slider">
+    <Draggable nodeRef={nodeRef}>
+      <div className="day_slider" ref={nodeRef}>
         <Slider {...settings}>
           {tripPlan.map((dayPlan, index) => (
             <div key={index} onClick={() => onItemClick(dayPlan.id)}>

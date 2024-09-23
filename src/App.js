@@ -44,6 +44,9 @@ function App() {
           isLogin={isLogin}
           setIsLogin={setIsLogin}
           setIsSignup={setIsSignup}
+          setChatData={setChatData}
+          setCoordinates={setCoordinates}
+          setImagesUrls={setImagesUrls}
         />
         <Routes>
           <Route

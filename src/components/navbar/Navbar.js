@@ -3,21 +3,25 @@ import { useNavigate } from "react-router-dom";
 import Logo from "../../assets/logo.jpg";
 import "./Navbar.css";
 
-const Navbar = ({ isLogin, setIsLogin, setIsSignup}) => {
-
-  
+const Navbar = ({
+  isLogin,
+  setIsLogin,
+  setIsSignup,
+  setChatData,
+  setCoordinates,
+  setImagesUrls,
+}) => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
     localStorage.removeItem("token"); // Remove the token on logout
-    localStorage.removeItem("UserId"); 
+    localStorage.removeItem("UserId");
     setIsLogin(false);
     navigate("/dologin");
   };
 
   return (
     <div className="nav_container">
-      
       <img className="nav_logo" src={Logo} alt="Logo" />
 
       <ul className="nav_menu">
@@ -27,6 +31,9 @@ const Navbar = ({ isLogin, setIsLogin, setIsSignup}) => {
               <button
                 className="button"
                 onClick={() => {
+                  setChatData("");
+                  setCoordinates("");
+                  setImagesUrls("");
                   navigate("/map");
                 }}
               >
@@ -64,7 +71,6 @@ const Navbar = ({ isLogin, setIsLogin, setIsSignup}) => {
             >
               SignUp
             </button>
-
           </>
         )}
       </ul>
