@@ -29,4 +29,4 @@ jobs:
           AWS_REGION: ${{ secrets.AWS_REGION }}
           S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
         run: |
-          aws s3 sync ./dist/webapp s3://gafront --delete
+          aws s3 sync ./build s3://gafront --delete
