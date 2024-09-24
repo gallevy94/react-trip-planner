@@ -20,7 +20,7 @@ const MyTrips = ({ userId, setChatData, setCoordinates, setImagesUrls }) => {
     };
 
     fetchTrips();
-  }, [userId]);
+  }, [userId, api]);
 
   const handleTripClick = (id) => {
     const clickedTrip = trips.find((trip) => trip.id === id);
@@ -43,8 +43,11 @@ const MyTrips = ({ userId, setChatData, setCoordinates, setImagesUrls }) => {
             onClick={() => handleTripClick(trip.id)}
           >
             <h2>
-              {trip.cityName} 
-              <div className="mytrips_date"> {trip.startDate} - {trip.endDate}</div>
+              {trip.cityName}
+              <div className="mytrips_date">
+                {" "}
+                {trip.startDate} - {trip.endDate}
+              </div>
             </h2>
             <img
               src={trip.imagesUrls[0]}

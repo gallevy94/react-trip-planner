@@ -1,7 +1,7 @@
 import "./Activity.css";
 import React from "react";
 import PinIcon from "../../assets/pin.png";
-import { Link } from "react-router-dom";
+
 
 const Activity = ({
   id,
@@ -14,11 +14,6 @@ const Activity = ({
   cardIdClick,
 }) => {
   return (
-    // <Link
-    //   to={"https://google.com/maps/search/?api=1&query=" + address}
-    //   target="_blank"
-    // >
-    
       <div className="plan_container" onClick={() => onCardPress(id)}>
         <div className="time_label">{time}</div>
 
@@ -40,8 +35,6 @@ const Activity = ({
           </div>
         </div>
       </div>
-  
-    // </Link>
   );
 };
 

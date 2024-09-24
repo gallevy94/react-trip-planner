@@ -4,7 +4,6 @@ import {
   GoogleMap,
   Marker,
   DirectionsRenderer,
-  AdvancedMarkerElement,
 } from "@react-google-maps/api";
 import Days from "../trip/Days";
 import Activity from "../trip/Activity";
@@ -109,8 +108,6 @@ const MapContainer = ({ tripPlan, coordinates, imagesUrls }) => {
       );
       setAllMarkers(flatMarkers);
       setDayMarkers(flatMarkers); // Initially show all markers
-
-      console.log("Trip Plan", tripPlan);
     }
   }, [coordinates]);
 
