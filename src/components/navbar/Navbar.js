@@ -48,7 +48,7 @@ const Navbar = ({
                 My Trips
               </button>
             </div>
-            <button className="nav_button" onClick={handleLogout}>
+            <button className="logout_button" onClick={handleLogout}>
               Logout
             </button>
           </>

@@ -6,33 +6,46 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(5px); /* Subtle blur effect */
+  position: relative;
+}
+
+.login_container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.215);
+  z-index: 1;
 }
 
 .login_form {
   display: flex;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
-  padding: 30px 40px; /* Reduced padding */
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px 50px;
   border-radius: 20px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-  gap: 15px; /* Reduced gap between elements */
-  max-width: 350px; /* Reduced max width */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  gap: 20px;
+  max-width: 400px;
   width: 100%;
+  z-index: 2;
+  animation: slideIn 0.5s ease-in-out;
 }
 
 .login_form input {
   border-radius: 10px;
   border: 1px solid #ddd;
-  padding: 12px;
+  padding: 12px 0px 12px 9px;
   font-size: 16px;
   width: 100%;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.2s ease;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .login_form input:focus {
-  box-shadow: 0px 0px 8px rgba(30, 169, 198, 0.3);
+  box-shadow: 0px 0px 8px rgba(30, 169, 198, 0.5);
   border-color: #1ea9c6;
 }
 
@@ -40,13 +53,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #4285f4; /* Google blue */
+  background-color: #4285f4;
   color: white;
   font-size: 16px;
   font-weight: bold;
   border: none;
-  border-radius: 25px; /* More rounded button */
-  padding: 10px; /* Slightly reduced padding */
+  border-radius: 25px;
+  padding: 12px;
   cursor: pointer;
   width: 100%;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
@@ -56,7 +69,9 @@
 .google-button:hover {
   transform: translateY(-2px);
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
+  background-color: #357ae8; 
 }
+
 
 .google-logo {
   width: 20px;
@@ -65,7 +80,7 @@
 }
 
 .error_p {
-  color: #e74c3c; /* Softer red for error messages */
+  color: #e74c3c;
   font-weight: bold;
   font-size: 0.9rem;
 }
@@ -76,7 +91,7 @@
   text-transform: uppercase;
   font-size: 12px;
   color: #7f8c8d;
-  margin: 15px 0; /* Reduced margin */
+  margin: 20px 0;
 }
 
 .divider-wrapper:before,
@@ -90,4 +105,25 @@
   text-align: center;
   flex: 0.3;
   margin: 0 10px;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.google-button:active {
+  transform: translateY(1px);
+}
+
+@media (max-width: 500px) {
+  .login_form {
+    padding: 20px 30px;
+  }
 }
