@@ -6,37 +6,56 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  backdrop-filter: blur(5px); /* Subtle blur effect */
 }
 
 .login_form {
   display: flex;
-  background-color: #fdbd88;
-  padding: 40px 80px 80px 80px;
-  border-radius: 30px;
   flex-direction: column;
-  gap: 20px;
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  padding: 30px 40px; /* Reduced padding */
+  border-radius: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  gap: 15px; /* Reduced gap between elements */
+  max-width: 350px; /* Reduced max width */
+  width: 100%;
+}
+
+.login_form input {
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  padding: 12px;
+  font-size: 16px;
+  width: 100%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease;
+}
+
+.login_form input:focus {
+  box-shadow: 0px 0px 8px rgba(30, 169, 198, 0.3);
+  border-color: #1ea9c6;
 }
 
 .google-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: white;
-  color: #1ea9c6;
+  background-color: #4285f4; /* Google blue */
+  color: white;
   font-size: 16px;
   font-weight: bold;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 8px;
+  border: none;
+  border-radius: 25px; /* More rounded button */
+  padding: 10px; /* Slightly reduced padding */
   cursor: pointer;
-  width: 160px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
+  width: 100%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .google-button:hover {
-  transform: translateY(-0.1rem);
-  background-color: #f9f9cb;
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.25);
 }
 
 .google-logo {
@@ -46,29 +65,29 @@
 }
 
 .error_p {
-  color: red;
+  color: #e74c3c; /* Softer red for error messages */
   font-weight: bold;
   font-size: 0.9rem;
 }
 
 .divider-wrapper {
   display: flex;
+  align-items: center;
   text-transform: uppercase;
   font-size: 12px;
-  align-items: center;
+  color: #7f8c8d;
+  margin: 15px 0; /* Reduced margin */
 }
 
 .divider-wrapper:before,
 .divider-wrapper:after {
   content: "";
-  border-bottom: 1px solid #1ea9c6;
-  flex: 1 0 auto;
-  height: 0.5em;
+  border-bottom: 1px solid #ddd;
+  flex: 1;
 }
 
 .divider {
   text-align: center;
-  flex: 0.2 0 auto;
-  margin: 0;
-  height: 12px;
+  flex: 0.3;
+  margin: 0 10px;
 }

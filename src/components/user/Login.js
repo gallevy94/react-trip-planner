@@ -9,6 +9,7 @@ const Login = ({ setIsLogin, isSignup, setUserId }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [isGoogleLogin, setIsGoogleLogin] = useState(false); // New state for Google login
 
   const api = createApi();
   const navigate = useNavigate();
@@ -16,33 +17,29 @@ const Login = ({ setIsLogin, isSignup, setUserId }) => {
 
   useEffect(() => {
     setIsLogin(false);
-    // Check if the URL contains the token after Google login
     const query = new URLSearchParams(location.search);
     let token = query.get("token");
-    console.log(token);
-
+    
     if (!token) {
       token = localStorage.getItem("token"); // Fallback to localStorage
-      console.log(token);
     }
 
     if (token) {
       let id = query.get("id");
       localStorage.setItem("token", token);
-      console.log(token);
       setUserId(id);
+      setError(""); // Clear the error on successful login
       setIsLogin(true);
+      setIsGoogleLogin(false); // Reset the Google login state
       navigate("/map");
     }
-  }, [location, setIsLogin, navigate]);
+  }, [location, setIsLogin, navigate, setUserId]);
 
   const googleLogin = () => {
+    setError(""); // Clear any existing error when starting Google login
+    setIsGoogleLogin(true); // Set Google login state
     window.location.href =
       "http://localhost:8080/oauth2/authorize/google?redirect_uri=http://localhost:8080/google";
-
-    setTimeout(() => {
-      setIsLogin(true);
-    }, 2000);
   };
 
   const submit = async (e) => {
@@ -58,7 +55,6 @@ const Login = ({ setIsLogin, isSignup, setUserId }) => {
         }
 
         localStorage.setItem("token", data.token);
-        console.log(data.userId);
         setUserId(data.userId);
         setIsLogin(true);
         navigate("/map");
@@ -69,21 +65,6 @@ const Login = ({ setIsLogin, isSignup, setUserId }) => {
     } else {
       setError("Please Fill All Fields");
     }
-  };
-
-  const decodeJWT = (token) => {
-    const base64Url = token.split(".")[1]; // Get the payload part
-    const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/"); // Replace URL-safe characters
-    const jsonPayload = decodeURIComponent(
-      atob(base64)
-        .split("")
-        .map((c) => {
-          return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
-        })
-        .join("")
-    );
-
-    return JSON.parse(jsonPayload);
   };
 
   return (
@@ -107,14 +88,16 @@ const Login = ({ setIsLogin, isSignup, setUserId }) => {
         />
 
         <button className="button">{isSignup ? "SignUp" : "Login"}</button>
-        {error && <p className="error_p">{error}</p>}
+        {/* Only show the error if it's not a Google login */}
+        {error && !isGoogleLogin && <p className="error_p">{error}</p>}
+        
         <div className="divider-wrapper">
           <span className="divider">Or</span>
         </div>
 
-        <button className="google-button" onClick={googleLogin}>
+        <button className="google-button" type="button" onClick={googleLogin}>
           <img src={googleLogo} alt="Google logo" className="google-logo" />
-          Login
+          Login with Google
         </button>
       </form>
     </div>
