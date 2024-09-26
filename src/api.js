@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Create an Axios instance
 const api = axios.create({
-  baseURL: "http://node128.codingbc.com:8086/",
+  baseURL: "https://trip-planner.runmydocker-app.com/",
 });
 
 // Add a request interceptor to include JWT token in headers
@@ -66,7 +66,7 @@ export const createApi = () => {
     getTripPlan: (location, startDate, endDate, userId) => {
       return api
         .post(
-          "/trip/trip-plan",
+          "/api/trip/trip-plan",
           null,
           {
             params: {
@@ -92,7 +92,7 @@ export const createApi = () => {
     getUserTrips: (userId) => {
       return api
         .post(
-          "/trip/userTrips",
+          "/api/trip/userTrips",
           { userId },
           {
             headers: {
