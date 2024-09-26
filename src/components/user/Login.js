@@ -38,7 +38,7 @@ const Login = ({ setIsLogin, isSignup, setUserId }) => {
     setError(""); 
     setIsGoogleLogin(true); 
     window.location.href =
-      "https://trip-planner.runmydocker-app.com/oauth2/authorize/google?redirect_uri=https://trip-planner.runmydocker-app.com/google";
+      "https://d4q86yzpdylr8.cloudfront.net/oauth2/authorize/google?redirect_uri=https://d4q86yzpdylr8.cloudfront.net/google";
   };
 
   const submit = async (e) => {
