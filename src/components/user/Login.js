@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { createApi } from "../../api";
 import googleLogo from "../../assets/google_logo.png";
-
 import "./Login.css";
 
 const Login = ({ setIsLogin, isSignup, setUserId }) => {

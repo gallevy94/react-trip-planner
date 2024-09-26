@@ -5,7 +5,6 @@ import TripInput from "./components/search/TripInput";
 import Loader from "./components/loader/Loader";
 import Login from "./components/user/Login";
 import Welcome from "./components/welcome/Welcome";
-
 import {
   Route,
   Routes,
