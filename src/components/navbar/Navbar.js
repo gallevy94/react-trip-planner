@@ -22,7 +22,15 @@ const Navbar = ({
 
   return (
     <div className="nav_container">
-      <img className="nav_logo" src={Logo} alt="Logo" />
+      <img
+        className="nav_logo"
+        src={Logo}
+        alt="Logo"
+        style={{ cursor: "pointer" }}
+        onClick={() => {
+          navigate("/");
+        }}
+      />
 
       <ul className="nav_menu">
         {isLogin ? (

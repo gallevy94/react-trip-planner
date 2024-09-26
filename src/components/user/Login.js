@@ -28,16 +28,16 @@ const Login = ({ setIsLogin, isSignup, setUserId }) => {
       let id = query.get("id");
       localStorage.setItem("token", token);
       setUserId(id);
-      setError(""); // Clear the error on successful login
+      setError(""); 
       setIsLogin(true);
-      setIsGoogleLogin(false); // Reset the Google login state
+      setIsGoogleLogin(false); 
       navigate("/map");
     }
   }, [location, setIsLogin, navigate, setUserId]);
 
   const googleLogin = () => {
-    setError(""); // Clear any existing error when starting Google login
-    setIsGoogleLogin(true); // Set Google login state
+    setError(""); 
+    setIsGoogleLogin(true); 
     window.location.href =
       "http://localhost:8080/oauth2/authorize/google?redirect_uri=http://localhost:8080/google";
   };
