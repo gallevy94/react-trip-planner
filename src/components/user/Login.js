@@ -38,7 +38,7 @@ const Login = ({ setIsLogin, isSignup, setUserId }) => {
     setError(""); 
     setIsGoogleLogin(true); 
     window.location.href =
-      "http://localhost:8080/oauth2/authorize/google?redirect_uri=http://localhost:8080/google";
+      "http://node128.codingbc.com:8086/oauth2/authorize/google?redirect_uri=http://node128.codingbc.com:8086/google";
   };
 
   const submit = async (e) => {

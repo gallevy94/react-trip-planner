@@ -37,8 +37,6 @@ const TripInput = ({
           setChatData(tripPlanArray);
           setCoordinates(coordinates);
           setImagesUrls(imagesUrls);
-
-          console.log("trip data", tripPlanArray);
         } else {
           console.error("No data returned from API");
         }
